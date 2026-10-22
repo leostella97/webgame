@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resident Evil 3: Nemesis - WebGame</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎮</text></svg>">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{background:#111;color:#e0e0e0;font-family:system-ui,sans-serif;display:flex;flex-direction:column;align-items:center;min-height:100vh}
+    header{padding:1rem;text-align:center}
+    h1{font-size:1.4rem;color:#e94560}
+    #game{width:100%;max-width:800px;aspect-ratio:4/3}
+    .hint{font-size:.8rem;color:#888;padding:1rem;text-align:center;line-height:1.8;max-width:800px}
+    .hint kbd{background:#333;border:1px solid #e94560;padding:2px 6px;border-radius:3px;font-family:monospace}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🎮 Resident Evil 3: Nemesis</h1>
+    <div><a href="index.html" style="color:#e94560;font-size:.8rem;text-decoration:none">← Menu de jogos</a></div>
+  </header>
+
+  <div id="game"></div>
+
+  <div class="hint">
+    <kbd>Setas</kbd>=D-Pad <kbd>Z</kbd>=✕ <kbd>X</kbd>=◯ <kbd>S</kbd>=▢ <kbd>D</kbd>=△
+    <kbd>V</kbd>=Start <kbd>C</kbd>=Select <kbd>A/W</kbd>=L1/L2 <kbd>Q/E</kbd>=R1/R2
+    <br>Gamepad USB/Bluetooth funciona automaticamente (Xbox, PlayStation, Switch)
+    <br><kbd>F1</kbd>=salvar rápido <kbd>F2</kbd>=recarregar estado
+  </div>
+
+  <script>
+    // EmulatorJS - 100% local (sem CDN)
+    EJS_player         = '#game';
+    EJS_core           = 'psx';                 // pcsx_rearmed
+    EJS_gameName       = 'Resident Evil 3 - Nemesis';
+    EJS_startOnLoaded  = true;
+    EJS_pathtodata     = 'data/';               // data/ local: loader.js, cores, css
+
+    // .cue baixa sozinho; o .bin vem via gameParentUrl e vai para o mesmo dir /
+    EJS_gameUrl        = 'assets/resident-evil-3.cue';
+    EJS_gameParentUrl  = 'assets/resident-evil-3.bin';
+
+    // BIOS real (zip com arquivos na raiz - extraidos para /)
+    EJS_biosUrl        = 'data/bios/psx-bios.zip';
+
+    EJS_defaultOptions = {
+      'save-state-location': 'browser',
+      'saves-location': 'browser',
+      'save-save-interval': '30'  // TEAM_001: autosave a cada 30s
+    };
+  </script>
+  <script src="data/loader.js"></script>
+  <script src="save-buttons.js" defer></script>
+</body>
+</html>

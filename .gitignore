@@ -1,0 +1,6 @@
+# TEAM_001: ROMs/BIOS nao vao para o GitHub —
+# .bin >100MB estoura o limite do GitHub; ROMs e BIOS sao copyrighted.
+# Mantidos apenas localmente; o site publicado funciona como vitrine.
+assets/*.bin
+assets/*.7z
+data/bios/

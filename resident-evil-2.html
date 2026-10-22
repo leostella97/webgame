@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resident Evil 2 - WebGame</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎮</text></svg>">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{background:#111;color:#e0e0e0;font-family:system-ui,sans-serif;display:flex;flex-direction:column;align-items:center;min-height:100vh}
+    header{padding:1rem;text-align:center}
+    h1{font-size:1.4rem;color:#e94560}
+    #game{width:100%;max-width:800px;aspect-ratio:4/3}
+    .hint{font-size:.8rem;color:#888;padding:1rem;text-align:center;line-height:1.8;max-width:800px}
+    .hint kbd{background:#333;border:1px solid #e94560;padding:2px 6px;border-radius:3px;font-family:monospace}
+    /* tela de seleção de disco */
+    #select{width:100%;max-width:800px;display:flex;gap:1.5rem;justify-content:center;padding:2rem 1rem}
+    .disc{background:#1a1a2e;border:1px solid #2a2a4a;border-radius:10px;overflow:hidden;width:280px;cursor:pointer;transition:transform .15s,border-color .15s;text-align:center}
+    .disc:hover{transform:translateY(-4px);border-color:#e94560}
+    .disc img{width:100%;aspect-ratio:1/1.1;object-fit:contain;background:#000;display:block}
+    .disc .who{padding:.9rem}
+    .disc .who h2{font-size:1.15rem;color:#fff}
+    .disc .who .d{font-size:.75rem;color:#e94560;font-weight:600;letter-spacing:.05em;text-transform:uppercase}
+    .disc .who p{font-size:.8rem;color:#999;margin-top:.4rem}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🎮 Resident Evil 2</h1>
+    <div><a href="index.html" style="color:#e94560;font-size:.8rem;text-decoration:none">← Menu de jogos</a></div>
+  </header>
+
+  <div id="select">
+    <div class="disc" onclick="start(1)">
+      <img src="assets/covers/resident-evil-2-disc1.png" alt="Disco 1 - Leon">
+      <div class="who">
+        <div class="d">Disco 1</div>
+        <h2>Leon S. Kennedy</h2>
+        <p>Policial novato no primeiro dia de trabalho em Raccoon City</p>
+      </div>
+    </div>
+    <div class="disc" onclick="start(2)">
+      <img src="assets/covers/resident-evil-2-disc2.png" alt="Disco 2 - Claire">
+      <div class="who">
+        <div class="d">Disco 2</div>
+        <h2>Claire Redfield</h2>
+        <p>Estudante que veio à cidade procurar o irmão, Chris</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="game"></div>
+
+  <div class="hint">
+    <kbd>Setas</kbd>=D-Pad <kbd>Z</kbd>=✕ <kbd>X</kbd>=◯ <kbd>S</kbd>=▢ <kbd>D</kbd>=△
+    <kbd>V</kbd>=Start <kbd>C</kbd>=Select <kbd>A/W</kbd>=L1/L2 <kbd>Q/E</kbd>=R1/R2
+    <br>Gamepad USB/Bluetooth funciona automaticamente (Xbox, PlayStation, Switch)
+    <br><kbd>F1</kbd>=salvar rápido <kbd>F2</kbd>=recarregar estado
+  </div>
+
+  <script>
+    // TEAM_001: página única com seleção de disco (Leon=D1, Claire=D2);
+    // mesmo EJS_gameName nos dois discos = saves/memory card compartilhados,
+    // como no hardware real (cenários A/B usam o mesmo save)
+    function start(disc) {
+      window.EJS_player         = '#game';
+      window.EJS_core           = 'psx';                 // pcsx_rearmed
+      window.EJS_gameName       = 'Resident Evil 2';
+      window.EJS_startOnLoaded  = true;
+      window.EJS_pathtodata     = 'data/';
+
+      window.EJS_gameUrl        = 'assets/resident-evil-2-disc' + disc + '.cue';
+      window.EJS_gameParentUrl  = 'assets/resident-evil-2-disc' + disc + '.bin';
+
+      window.EJS_biosUrl        = 'data/bios/psx-bios.zip';
+      window.EJS_defaultOptions = {
+        'save-state-location': 'browser',
+        'saves-location': 'browser',
+        'save-save-interval': '30'  // TEAM_001: autosave a cada 30s
+      };
+
+      document.getElementById('select').style.display = 'none';
+      const s = document.createElement('script');
+      s.src = 'data/loader.js';
+      document.body.appendChild(s);
+    }
+  </script>
+  <script src="save-buttons.js" defer></script>
+</body>
+</html>

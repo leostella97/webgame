@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WebGame - Escolha o Jogo</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎮</text></svg>">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{background:#111;color:#e0e0e0;font-family:system-ui,sans-serif;min-height:100vh;display:flex;flex-direction:column;align-items:center}
+    header{padding:2rem 1rem 1rem;text-align:center}
+    h1{font-size:1.8rem;color:#e94560}
+    .sub{font-size:.9rem;color:#888;margin-top:.4rem}
+    main{flex:1;width:100%;max-width:1000px;padding:1.5rem;display:flex;justify-content:center}
+    .games{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem;width:100%}
+    .card{background:#1a1a2e;border:1px solid #2a2a4a;border-radius:10px;overflow:hidden;display:flex;flex-direction:column;transition:transform .15s,border-color .15s}
+    .card:hover{transform:translateY(-4px);border-color:#e94560}
+    .card img{width:100%;aspect-ratio:4/3;object-fit:contain;display:block;background:#000}
+    .card-body{padding:1rem;display:flex;flex-direction:column;gap:.6rem;flex:1}
+    .card h2{font-size:1.15rem;color:#fff}
+    .meta{font-size:.75rem;color:#e94560;font-weight:600;letter-spacing:.05em;text-transform:uppercase}
+    .desc{font-size:.85rem;color:#aaa;line-height:1.55;flex:1}
+    .play{display:block;text-align:center;background:#e94560;color:#fff;text-decoration:none;padding:.7rem 1rem;border-radius:6px;font-weight:700;font-size:1rem;transition:background .15s}
+    .play:hover{background:#d63654}
+    footer{padding:1.5rem;color:#666;font-size:.8rem;text-align:center}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🎮 WebGame</h1>
+    <div class="sub">Escolha um clássico e divirta-se!</div>
+  </header>
+
+  <main>
+    <div class="games">
+
+      <div class="card">
+        <img src="assets/covers/jackie.png" alt="Jackie Chan Stuntmaster">
+        <div class="card-body">
+          <div class="meta">Ação / Beat 'em up · Midway · 2000</div>
+          <h2>Jackie Chan Stuntmaster</h2>
+          <p class="desc">
+            Jackie luta pelas ruas e telhados de Chinatown para resgatar seu avô.
+            Beat 'em up 3D com as acrobacias, armas improvisadas e o humor
+            característicos do astro — inclui os famosos outtakes do filme.
+          </p>
+          <a class="play" href="jackie.html">▶️ Jogar</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="assets/covers/crash.png" alt="Crash Bandicoot">
+        <div class="card-body">
+          <div class="meta">Plataforma 3D · Naughty Dog · 1996</div>
+          <h2>Crash Bandicoot</h2>
+          <p class="desc">
+            O clássico marsupial do PlayStation. Gire, pule e quebre caixas
+            pelas ilhas Wumpa para resgatar Tawna e acabar com os planos do
+            Dr. Neo Cortex e seus mutantes.
+          </p>
+          <a class="play" href="crash.html">▶️ Jogar</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="assets/covers/harvest-moon.png" alt="Harvest Moon: Back to Nature">
+        <div class="card-body">
+          <div class="meta">Simulação / RPG · Natsume · 1999</div>
+          <h2>Harvest Moon: Back to Nature</h2>
+          <p class="desc">
+            Herde a fazenda do seu avô em Mineral Town e restaure-a em 3 anos.
+            Plante, crie animais, pesque, faça amizades e case-se neste clássico
+            da vida no campo.
+          </p>
+          <a class="play" href="harvest-moon.html">▶️ Jogar</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="assets/covers/metal-slug-x.png" alt="Metal Slug X">
+        <div class="card-body">
+          <div class="meta">Run and Gun · SNK · 1999</div>
+          <h2>Metal Slug X</h2>
+          <p class="desc">
+            Versão turbinada de Metal Slug 2. Marco e Tarma enfrentam o exército
+            do General Morden (e aliens) com tiros, granadas e os icônicos
+            veículos Slug em pixel art impecável.
+          </p>
+          <a class="play" href="metal-slug-x.html">▶️ Jogar</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="assets/covers/mega-man-x4.png" alt="Mega Man X4">
+        <div class="card-body">
+          <div class="meta">Ação / Plataforma · Capcom · 1997</div>
+          <h2>Mega Man X4</h2>
+          <p class="desc">
+            X ou Zero — pela primeira vez jogável do início ao fim com seu
+            sabre. Mavericks, armaduras secretas e cutscenes em anime na
+            guerra entre Hunters e Repliforce.
+          </p>
+          <a class="play" href="mega-man-x4.html">▶️ Jogar</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="assets/covers/mortal-kombat-trilogy.png" alt="Mortal Kombat Trilogy">
+        <div class="card-body">
+          <div class="meta">Luta · Midway · 1996</div>
+          <h2>Mortal Kombat Trilogy</h2>
+          <p class="desc">
+            O compilado definitivo: todos os lutadores, cenários e Fatalities
+            de MK1, MK2 e MK3/Ultimate num só disco — com trilha sonora
+            direto do CD. Finish him!
+          </p>
+          <a class="play" href="mortal-kombat-trilogy.html">▶️ Jogar</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="assets/covers/tekken-3.png" alt="Tekken 3">
+        <div class="card-body">
+          <div class="meta">Luta 3D · Namco · 1998</div>
+          <h2>Tekken 3</h2>
+          <p class="desc">
+            O ápice da série no PlayStation. Jin Kazama entra no King of Iron
+            Fist Tournament para vingar a mãe — com combos fluídos, side-step
+            3D e um dos melhores elencos dos jogos de luta.
+          </p>
+          <a class="play" href="tekken-3.html">▶️ Jogar</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="assets/covers/king-of-fighters-98.png" alt="The King of Fighters '98">
+        <div class="card-body">
+          <div class="meta">Luta 2D · SNK · 1998</div>
+          <h2>The King of Fighters '98</h2>
+          <p class="desc">
+            O "Dream Match" da SNK: 38 lutadores em batalhas 3x3, incluindo
+            personagens de toda a saga Orochi. Considerado por muitos o
+            melhor KOF de todos os tempos.
+          </p>
+          <a class="play" href="king-of-fighters-98.html">▶️ Jogar</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="assets/covers/dragon-ball-gt.png" alt="Dragon Ball GT: Final Bout">
+        <div class="card-body">
+          <div class="meta">Luta 3D · Bandai · 1997</div>
+          <h2>Dragon Ball GT: Final Bout</h2>
+          <p class="desc">
+            O primeiro Dragon Ball em 3D do PlayStation. Goku, Vegeta, Gohan
+            e os guerreiros de GT em combates aéreos com kamehamehas,
+            transformações Super Saiyajin e até SSJ4.
+          </p>
+          <a class="play" href="dragon-ball-gt.html">▶️ Jogar</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="assets/covers/crash-bandicoot-2.png" alt="Crash Bandicoot 2: Cortex Strikes Back">
+        <div class="card-body">
+          <div class="meta">Plataforma 3D · Naughty Dog · 1997</div>
+          <h2>Crash Bandicoot 2: Cortex Strikes Back</h2>
+          <p class="desc">
+            Cortex diz querer salvar o mundo coletando cristais — mas será?
+            Crash percorre as Warp Rooms com novos movimentos: deslizar,
+            rastejar e o famoso body slam.
+          </p>
+          <a class="play" href="crash-bandicoot-2.html">▶️ Jogar</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="assets/covers/crash-team-racing.png" alt="Crash Team Racing">
+        <div class="card-body">
+          <div class="meta">Corrida / Kart · Naughty Dog · 1999</div>
+          <h2>Crash Team Racing</h2>
+          <p class="desc">
+            O alien Nitros Oxide desafia a Terra para uma corrida pelo planeta.
+            Crash, Coco, Cortex e cia. aceleram em 25 pistas com itens malucos,
+            turbo acumulativo e modo aventura.
+          </p>
+          <a class="play" href="crash-team-racing.html">▶️ Jogar</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="assets/covers/gran-turismo.png" alt="Gran Turismo">
+        <div class="card-body">
+          <div class="meta">Corrida / Simulador · Polyphony · 1997</div>
+          <h2>Gran Turismo</h2>
+          <p class="desc">
+            "The Real Driving Simulator" que definiu o gênero: mais de 140
+            carros reais, 11 pistas, tuning detalhado e o viciante modo
+            Simulation com provas de habilitação.
+          </p>
+          <a class="play" href="gran-turismo.html">▶️ Jogar</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="assets/covers/marvel-vs-capcom.png" alt="Marvel vs. Capcom">
+        <div class="card-body">
+          <div class="meta">Luta 2D / Tag · Capcom · 1998</div>
+          <h2>Marvel vs. Capcom: Clash of Super Heroes</h2>
+          <p class="desc">
+            Heróis da Marvel e da Capcom em duplas: Ryu, Chun-Li, Wolverine,
+            Homem-Aranha e companhia em combates aéreos frenéticos com
+            assists e hyper combos gigantes.
+          </p>
+          <a class="play" href="marvel-vs-capcom.html">▶️ Jogar</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="assets/covers/castlevania-sotn.png" alt="Castlevania: Symphony of the Night">
+        <div class="card-body">
+          <div class="meta">Ação / Metroidvania · Konami · 1997</div>
+          <h2>Castlevania: Symphony of the Night</h2>
+          <p class="desc">
+            Alucard desperta para explorar o castelo de Drácula. O jogo que
+            batizou um gênero: exploração não-linear, RPG, segredos e o
+            lendário castelo invertido.
+          </p>
+          <a class="play" href="castlevania-sotn.html">▶️ Jogar</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="assets/covers/vigilante-8.png" alt="Vigilante 8: 2nd Offense">
+        <div class="card-body">
+          <div class="meta">Combate Veicular · Activision · 1999</div>
+          <h2>Vigilante 8: 2nd Offense</h2>
+          <p class="desc">
+            Muscle cars armados até os dentes nos anos 70 — agora com viagem
+            no tempo. Arenas destrutivas, armas mirabolantes e um clima
+            totalmente retro-futurista.
+          </p>
+          <a class="play" href="vigilante-8.html">▶️ Jogar</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="assets/covers/twisted-metal-4.png" alt="Twisted Metal 4">
+        <div class="card-body">
+          <div class="meta">Combate Veicular · 989 Studios · 1999</div>
+          <h2>Twisted Metal 4</h2>
+          <p class="desc">
+            Sweet Tooth virou o chefe do torneio — e quem vencer escolhe um
+            desejo. Caos veicular com arenas interativas, armas absurdas e
+            uma trilha pesada de metal no CD.
+          </p>
+          <a class="play" href="twisted-metal-4.html">▶️ Jogar</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="assets/covers/tenchu-2.png" alt="Tenchu 2: Birth of the Stealth Assassins">
+        <div class="card-body">
+          <div class="meta">Stealth / Ação · Activision · 2000</div>
+          <h2>Tenchu 2: Birth of the Stealth Assassins</h2>
+          <p class="desc">
+            Prelúdio do clássico ninja: Rikimaru e Ayame em missões de
+            infiltração no Japão feudal — ganchos, furtividade e kills
+            silenciosos na sombra.
+          </p>
+          <a class="play" href="tenchu-2.html">▶️ Jogar</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="assets/covers/driver.png" alt="Driver">
+        <div class="card-body">
+          <div class="meta">Corrida / Ação · Reflections · 1999</div>
+          <h2>Driver</h2>
+          <p class="desc">
+            Tanner, policial infiltrado como motorista de fuga, percorre
+            Miami, San Francisco, LA e Nova York em perseguições dignas
+            de filme dos anos 70.
+          </p>
+          <a class="play" href="driver.html">▶️ Jogar</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="assets/covers/dino-crisis.png" alt="Dino Crisis">
+        <div class="card-body">
+          <div class="meta">Survival Horror · Capcom · 1999</div>
+          <h2>Dino Crisis</h2>
+          <p class="desc">
+            "Resident Evil com dinossauros": a agente Regina investiga uma
+            ilha onde um experimento militar abriu uma fenda temporal —
+            raptores inteligentes e um T-Rex incansável.
+          </p>
+          <a class="play" href="dino-crisis.html">▶️ Jogar</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="assets/covers/silent-hill.png" alt="Silent Hill">
+        <div class="card-body">
+          <div class="meta">Survival Horror · Konami · 1999</div>
+          <h2>Silent Hill</h2>
+          <p class="desc">
+            Harry Mason procura a filha desaparecida numa cidade coberta
+            de névoa e pesadelos. Terror psicológico, sirenes e o mundo
+            sombrio alternado que virou lenda.
+          </p>
+          <a class="play" href="silent-hill.html">▶️ Jogar</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="assets/covers/grand-theft-auto.png" alt="Grand Theft Auto">
+        <div class="card-body">
+          <div class="meta">Ação · DMA Design / Rockstar · 1997</div>
+          <h2>Grand Theft Auto</h2>
+          <p class="desc">
+            O original que começou tudo: visão aérea, três cidades
+            (Liberty City, San Andreas e Vice City), missões para o
+            crime organizado e liberdade total de causar caos.
+          </p>
+          <a class="play" href="grand-theft-auto.html">▶️ Jogar</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="assets/covers/grand-theft-auto-2.png" alt="Grand Theft Auto 2">
+        <div class="card-body">
+          <div class="meta">Ação · DMA Design / Rockstar · 1999</div>
+          <h2>Grand Theft Auto 2</h2>
+          <p class="desc">
+            Anywhere City, um futuro próximo: sete gangues rivais,
+            sistema de respeito e a mesma liberdade de visão aérea —
+            agora com gráficos melhores e cidade mais viva.
+          </p>
+          <a class="play" href="grand-theft-auto-2.html">▶️ Jogar</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="assets/covers/tony-hawk-pro-skater.png" alt="Tony Hawk's Pro Skater">
+        <div class="card-body">
+          <div class="meta">Esporte · Neversoft / Activision · 1999</div>
+          <h2>Tony Hawk's Pro Skater</h2>
+          <p class="desc">
+            O jogo que redefiniu o skate virtual: manobras, combos
+            e a lendária trilha sonora punk/ska. 9 pistas, metas de
+            pontuação e as fitas VHS secretas.
+          </p>
+          <a class="play" href="tony-hawk-pro-skater.html">▶️ Jogar</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="assets/covers/tony-hawk-pro-skater-2.png" alt="Tony Hawk's Pro Skater 2">
+        <div class="card-body">
+          <div class="meta">Esporte · Neversoft / Activision · 2000</div>
+          <h2>Tony Hawk's Pro Skater 2</h2>
+          <p class="desc">
+            A sequência que apresentou o manual — combos infinitos!
+            Escola, Marselha, Hangar e o criador de pistas. Nota 10
+            absoluta do PlayStation.
+          </p>
+          <a class="play" href="tony-hawk-pro-skater-2.html">▶️ Jogar</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="assets/covers/tony-hawk-pro-skater-3.png" alt="Tony Hawk's Pro Skater 3">
+        <div class="card-body">
+          <div class="meta">Esporte · Neversoft / Activision · 2001</div>
+          <h2>Tony Hawk's Pro Skater 3</h2>
+          <p class="desc">
+            O revert chegou para juntar vert e street num combo só.
+            Foundry, Aeroporto, Los Angeles e o convidado secreto:
+            Darth Maul de skate.
+          </p>
+          <a class="play" href="tony-hawk-pro-skater-3.html">▶️ Jogar</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="assets/covers/tony-hawk-pro-skater-4.png" alt="Tony Hawk's Pro Skater 4">
+        <div class="card-body">
+          <div class="meta">Esporte · Neversoft / Activision · 2002</div>
+          <h2>Tony Hawk's Pro Skater 4</h2>
+          <p class="desc">
+            O último da era clássica no PS1: mundo aberto por fase,
+            spine transfer, skitching e o modo carreira com metas
+            distribuídas pelos NPCs.
+          </p>
+          <a class="play" href="tony-hawk-pro-skater-4.html">▶️ Jogar</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="assets/covers/pepsiman.png" alt="Pepsiman">
+        <div class="card-body">
+          <div class="meta">Ação / Runner · KID · 1999</div>
+          <h2>Pepsiman</h2>
+          <p class="desc">
+            O mascote japonês da Pepsi em fases de corrida desenfreada:
+            desvie de caminhões, latas gigantes e obstáculos absurdos para
+            matar a sede do povo. Bizarrice japonesa pura.
+          </p>
+          <a class="play" href="pepsiman.html">▶️ Jogar</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="assets/covers/resident-evil.png" alt="Resident Evil">
+        <div class="card-body">
+          <div class="meta">Survival Horror · Capcom · 1996</div>
+          <h2>Resident Evil</h2>
+          <p class="desc">
+            O jogo que criou o survival horror. Chris ou Jill exploram a
+            mansão Spencer infestada de zumbis, com munição escassa,
+            puzzles e ângulos de câmera cinematográficos.
+          </p>
+          <a class="play" href="resident-evil.html">▶️ Jogar</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="assets/covers/resident-evil-3.png" alt="Resident Evil 3: Nemesis">
+        <div class="card-body">
+          <div class="meta">Survival Horror · Capcom · 1999</div>
+          <h2>Resident Evil 3: Nemesis</h2>
+          <p class="desc">
+            Jill Valentine tenta fugir de Raccoon City durante o surto do
+            T-vírus — enquanto o implacável Nemesis a caça pela cidade.
+            STARS...!
+          </p>
+          <a class="play" href="resident-evil-3.html">▶️ Jogar</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="assets/covers/resident-evil-2.png" alt="Resident Evil 2">
+        <div class="card-body">
+          <div class="meta">Survival Horror · Capcom · 1998 · 2 discos</div>
+          <h2>Resident Evil 2</h2>
+          <p class="desc">
+            Leon e Claire chegam separados a uma Raccoon City tomada por
+            zumbis. Duas campanhas entrelaçadas, a delegacia icônica e o
+            misterioso Mr. X no seu encalço.
+          </p>
+          <a class="play" href="resident-evil-2.html">▶️ Jogar</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="assets/covers/spider-man.png" alt="Spider-Man">
+        <div class="card-body">
+          <div class="meta">Ação 3D · Neversoft · 2000</div>
+          <h2>Spider-Man</h2>
+          <p class="desc">
+            Acusado de um crime que não cometeu, o Cabeça-de-Teia balança
+            por Nova York enfrentando Venom, Octopus, Carnificina e outros
+            vilões — com as piadas de sempre.
+          </p>
+          <a class="play" href="spider-man.html">▶️ Jogar</a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    Saves ficam no navegador (IndexedDB) · Gamepad USB/Bluetooth suportado<br>
+    Controles: Setas = D-Pad · Z = ✕ · X = ◯ · S = ▢ · D = △ · V = Start · C = Select
+  </footer>
+</body>
+</html>
