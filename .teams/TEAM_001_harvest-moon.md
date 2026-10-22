@@ -311,3 +311,8 @@ Data: 2026-10-22
 
 - `WebGame.bat`: duplo clique sobe `server.py` na porta 3000 (se a porta estiver livre) em janela minimizada e abre o site em janela de aplicativo (`--app=` no Edge/Chrome — so o conteudo, sem UI do navegador); sem Chromium cai para a aba padrao.
 - Detalhes: `cd /d %~dp0` roda de qualquer atalho; checagem de porta evita instancia dupla; `timeout.exe` por caminho absoluto (o `timeout` do Git Bash tem sintaxe diferente); labels fora de blocos `()`.
+
+## Icone do launcher (TEAM_001)
+
+- `webgame.ico`: emoji 🎮 renderizado via Segoe UI Emoji (PIL, multi-size 16-256).
+- `.bat` nao aceita icone embutido: `WebGame.lnk` aponta para o .bat com IconLocation=webgame.ico. O .lnk tem caminhos absolutos (D:\dev\WebGame) — fica local, fora do git.

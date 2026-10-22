@@ -4,3 +4,4 @@
 assets/*.bin
 assets/*.7z
 data/bios/
+*.lnk
