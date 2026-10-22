@@ -11,6 +11,13 @@ python server.py 9000
 
 Abra http://localhost:8080 no navegador, escolha o jogo e clique em **Jogar**.
 
+## Site publicado
+
+https://leostella97.github.io/webgame/ (GitHub Pages, branch `main`)
+O site publicado contem apenas o codigo (paginas, menu, EmulatorJS, capas) —
+ROMs `.bin`/`.7z` e BIOS ficam fora do repositorio (`.gitignore`) por limites
+do GitHub (>100MB) e copyright. Para jogar localmente, suba `server.py`.
+
 ## Conteudo
 
 | Pagina | Jogo |

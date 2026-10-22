@@ -275,6 +275,17 @@ Data: 2026-10-22
 - Página `tony-hawk-pro-skater-4.html`; card + README.
 - Todos os `.bin`/`.cue` de `assets/` agora têm página própria.
 
+## Publicação — GitHub Pages
+
+- Repo git criado em `D:\dev\WebGame`; remote `origin` = github.com/leostella97/webgame.
+- Commit com identidade do usuário (`leostella97 <leonstella97@gmail.com>`) — sem Devin.
+- `.gitignore`: `assets/*.bin`, `assets/*.7z`, `data/bios/` (limite 100MB + copyright).
+- Branches `main` e `gh-pages` publicadas; repo tornou-se público; Pages ativado
+  via branch `gh-pages` (o push disparou a ativação automática quando público).
+- Deploy fila→success após ~8min; `leostella97.github.io/webgame/` no ar (200).
+- Alias `/WebGame` NÃO funciona: github.io é case-sensitive no nome do repo;
+  exigiria renomear o repo para `WebGame` (redirect automático manteria `/webgame`).
+
 ## Estado ao final
 
 - Servidor rodando em http://localhost:3000 (porta 8080 bloqueada pelo Windows — WinError 10013).
