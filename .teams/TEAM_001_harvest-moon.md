@@ -286,6 +286,17 @@ Data: 2026-10-22
 - Alias `/WebGame` NÃO funciona: github.io é case-sensitive no nome do repo;
   exigiria renomear o repo para `WebGame` (redirect automático manteria `/webgame`).
 
+## Hospedagem remota das ROMs — Internet Archive (escolha do usuário)
+
+- `roms-config.js`: `location.hostname` local → `assets/` + `data/bios/`; senão
+  → `https://archive.org/download/webgame-ps1/` (ROMs + `psx-bios.zip`).
+- CORS verificado no IA (`Access-Control-Allow-Origin: *` nos downloads).
+- 31 páginas reescritas: `EJS_gameUrl`/`EJS_gameParentUrl` = `ROM_BASE_URL + 'x'`
+  e `EJS_biosUrl = EJS_BIOS_URL`; `<script src="roms-config.js">` no `<head>`.
+- `upload-ia.py`: sobe `assets/*.bin`, `assets/*.cue` e `data/bios/psx-bios.zip`
+  ao item `webgame-ps1` via lib `internetarchive` (exige `ia configure` do usuário).
+- Pendente do usuário: criar conta archive.org, rodar o upload (~15 GB).
+
 ## Estado ao final
 
 - Servidor rodando em http://localhost:3000 (porta 8080 bloqueada pelo Windows — WinError 10013).

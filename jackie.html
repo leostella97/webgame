@@ -14,6 +14,7 @@
     .hint{font-size:.8rem;color:#888;padding:1rem;text-align:center;line-height:1.8;max-width:800px}
     .hint kbd{background:#333;border:1px solid #e94560;padding:2px 6px;border-radius:3px;font-family:monospace}
   </style>
+  <script src="roms-config.js"></script>
 </head>
 <body>
   <header>
@@ -39,11 +40,11 @@
     EJS_pathtodata     = 'data/';               // data/ local: loader.js, cores, css
 
     // .cue baixa sozinho; o .bin (600MB) vem via gameParentUrl e vai para o mesmo dir /
-    EJS_gameUrl        = 'assets/jc-stuntmaster.cue';
-    EJS_gameParentUrl  = 'assets/jc-stuntmaster.bin';
+    EJS_gameUrl        = ROM_BASE_URL + 'jc-stuntmaster.cue';
+    EJS_gameParentUrl  = ROM_BASE_URL + 'jc-stuntmaster.bin';
 
     // BIOS real (zip com arquivos na raiz - extraidos para /)
-    EJS_biosUrl        = 'data/bios/psx-bios.zip';
+    EJS_biosUrl        = EJS_BIOS_URL;
 
     EJS_defaultOptions = {
       'save-state-location': 'browser',

@@ -16,7 +16,22 @@ Abra http://localhost:8080 no navegador, escolha o jogo e clique em **Jogar**.
 https://leostella97.github.io/webgame/ (GitHub Pages, branch `main`)
 O site publicado contem apenas o codigo (paginas, menu, EmulatorJS, capas) —
 ROMs `.bin`/`.7z` e BIOS ficam fora do repositorio (`.gitignore`) por limites
-do GitHub (>100MB) e copyright. Para jogar localmente, suba `server.py`.
+do GitHub (>100MB) e copyright.
+
+### ROMs remotas (Internet Archive)
+
+`roms-config.js` detecta o host: em `localhost` usa `assets/` local; em
+`github.io` baixa jogos + BIOS do item `webgame-ps1` no archive.org
+(o IA envia `Access-Control-Allow-Origin: *`, entao o EmulatorJS carrega ok).
+
+Para subir os arquivos (uma vez, ~15 GB):
+```bash
+pip install internetarchive
+ia configure            # login archive.org
+python upload-ia.py     # sobe .bin/.cue + psx-bios.zip para o item webgame-ps1
+```
+
+Para jogar localmente sem IA, suba `server.py`.
 
 ## Conteudo
 
