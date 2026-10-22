@@ -306,3 +306,8 @@ Data: 2026-10-22
 
 - Demais ROMs `.7z` em `assets/` ainda não têm página — extrair e adicionar conforme necessário.
 - Capa do Harvest Moon é placeholder gerada; substituir por arte oficial se desejado.
+
+## Launcher WebGame.bat (TEAM_001)
+
+- `WebGame.bat`: duplo clique sobe `server.py` na porta 3000 (se a porta estiver livre) em janela minimizada e abre o site em janela de aplicativo (`--app=` no Edge/Chrome — so o conteudo, sem UI do navegador); sem Chromium cai para a aba padrao.
+- Detalhes: `cd /d %~dp0` roda de qualquer atalho; checagem de porta evita instancia dupla; `timeout.exe` por caminho absoluto (o `timeout` do Git Bash tem sintaxe diferente); labels fora de blocos `()`.

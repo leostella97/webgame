@@ -2,14 +2,18 @@
 
 ## Como jogar
 
+**Jeito facil:** duplo clique em `WebGame.bat` — sobe o servidor na porta 3000
+(se ja nao estiver no ar) e abre o site numa janela de aplicativo, so com o
+conteudo (sem barra de endereco/abas).
+
+Manual:
+
 ```bash
 cd D:\dev\WebGame
-python server.py        # porta 8080 (padrao)
-# ou outra porta:
-python server.py 9000
+python server.py 3000
 ```
 
-Abra http://localhost:8080 no navegador, escolha o jogo e clique em **Jogar**.
+Abra http://localhost:3000 no navegador, escolha o jogo e clique em **Jogar**.
 
 ## Site publicado
 
